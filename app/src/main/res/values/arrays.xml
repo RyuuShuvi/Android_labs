@@ -1,0 +1,26 @@
+<resources>
+    <string-array name="length_units">
+        <item>Сантиметр</item>
+        <item>Метр</item>
+        <item>Кілометр</item>
+        <item>Дюйм</item>
+        <item>Миля</item>
+        <item>Ярд</item>
+        <item>Фут</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>Грам</item>
+        <item>Кілограм</item>
+        <item>Тона</item>
+        <item>Карат</item>
+        <item>Фунт</item>
+        <item>Пуд</item>
+    </string-array>
+
+    <string-array name="temp_units">
+        <item>Кельвін</item>
+        <item>Цельсій</item>
+        <item>Фаренгейт</item>
+    </string-array>
+</resources>
