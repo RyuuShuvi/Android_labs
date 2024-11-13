@@ -10,6 +10,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/spinner_background"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
@@ -18,6 +21,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/fromUnitSpinner"
         android:background="@drawable/spinner_background"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -27,6 +33,9 @@
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/toUnitSpinner"
         android:background="@drawable/edittext_background"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -36,6 +45,9 @@
         app:layout_constraintTop_toBottomOf="@+id/inputField"
         android:background="@drawable/textview_background"
         android:textColor="@color/text_color"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
