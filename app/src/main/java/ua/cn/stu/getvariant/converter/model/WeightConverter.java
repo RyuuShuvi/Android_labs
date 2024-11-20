@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,7 @@ import ua.cn.stu.getvariant.converter.lab2.ConversionService;
 public class WeightConverter extends Fragment {
     private ConversionService conversionService;
     private boolean bound = false;
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -81,8 +84,9 @@ public class WeightConverter extends Fragment {
                 String fromUnit = fromUnitSpinner.getSelectedItem().toString();
                 String toUnit = toUnitSpinner.getSelectedItem().toString();
                 double inputValue = Double.parseDouble(inputField.getText().toString());
-                double result = conversionService.convert(inputValue, fromUnit, toUnit);
-                resultField.setText(String.valueOf(result));
+                conversionService.convertAsync(inputValue, fromUnit, toUnit, result ->
+                        handler.post(() -> resultField.setText(String.valueOf(result)))
+                );
             }
         });
 

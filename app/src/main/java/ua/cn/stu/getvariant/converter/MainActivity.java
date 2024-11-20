@@ -1,6 +1,7 @@
 package ua.cn.stu.getvariant.converter;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnLengthConverter.setOnClickListener(v -> replaceFragment(new LengthConverter()));
         btnWeightConverter.setOnClickListener(v -> replaceFragment(new WeightConverter()));
         btnTempConverter.setOnClickListener(v -> replaceFragment(new TempConverter()));
+        Log.d("LAB3", "Updating UI on thread: " + Thread.currentThread().getId());
     }
 
     private void replaceFragment(Fragment fragment) {

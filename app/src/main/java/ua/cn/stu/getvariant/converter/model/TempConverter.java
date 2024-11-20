@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ import ua.cn.stu.getvariant.converter.lab2.ConversionService;
 public class TempConverter extends Fragment {
     private ConversionService conversionService;
     private boolean bound = false;
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -77,23 +80,15 @@ public class TempConverter extends Fragment {
         fromUnitSpinner.setAdapter(adapter);
         toUnitSpinner.setAdapter(adapter);
 
+        // Логіка конвертації при натисканні кнопки
         convertButton.setOnClickListener(v -> {
-            Log.d("TempConverterFragment", "Convert button clicked");
             if (bound) {
                 String fromUnit = fromUnitSpinner.getSelectedItem().toString();
-                Log.d("TempConverterFragment", "From unit" + fromUnit);
                 String toUnit = toUnitSpinner.getSelectedItem().toString();
-                String inputValueStr = inputField.getText().toString();
-                if (inputValueStr.isEmpty()) {
-                    Log.d("TempConverterFragment", "Input field is empty");
-                    return;
-                }
-                double inputValue = Double.parseDouble(inputValueStr);
-                double result = conversionService.convert(inputValue, fromUnit, toUnit);
-                resultField.setText(String.valueOf(result));
-                Log.d("TempConverterFragment", "Conversion result: " + result);
-            } else {
-                Log.d("TempConverterFragment", "Service not bound");
+                double inputValue = Double.parseDouble(inputField.getText().toString());
+                conversionService.convertAsync(inputValue, fromUnit, toUnit, result ->
+                        handler.post(() -> resultField.setText(String.valueOf(result)))
+                );
             }
         });
 

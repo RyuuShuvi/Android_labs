@@ -14,6 +14,8 @@ import java.util.Map;
 import ua.cn.stu.getvariant.converter.R;
 
 import android.content.res.Resources;
+import android.util.Log;
+
 import java.util.Iterator;
 
 
@@ -29,6 +31,19 @@ public class ConversionService extends Service {
         loadConversionRates();
         loadUnitKeys();
     }
+
+    public void convertAsync(double inputValue, String fromUnit, String toUnit, ConversionCallback callback) {
+        new Thread(() -> {
+            Log.d("LAB3", "Executed on thread: " + Thread.currentThread().getId());
+            double result = convert(inputValue, fromUnit, toUnit);
+            callback.onConversionResult(result);
+        }).start();
+    }
+
+    public interface ConversionCallback {
+        void onConversionResult(double result);
+    }
+
 
     private void loadConversionRates() {
         conversionRates = new HashMap<>();

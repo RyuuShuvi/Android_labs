@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +28,7 @@ import ua.cn.stu.getvariant.converter.lab2.ConversionService;
 public class LengthConverter extends Fragment {
     private ConversionService conversionService;
     private boolean bound = false;
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -73,13 +77,16 @@ public class LengthConverter extends Fragment {
         fromUnitSpinner.setAdapter(adapter);
         toUnitSpinner.setAdapter(adapter);
 
+        // Логіка конвертації при натисканні кнопки
         convertButton.setOnClickListener(v -> {
             if (bound) {
                 String fromUnit = fromUnitSpinner.getSelectedItem().toString();
                 String toUnit = toUnitSpinner.getSelectedItem().toString();
                 double inputValue = Double.parseDouble(inputField.getText().toString());
-                double result = conversionService.convert(inputValue, fromUnit, toUnit);
-                resultField.setText(String.valueOf(result));
+                Log.d("LAB3", "Updating UI on thread: " + Thread.currentThread().getId());
+                conversionService.convertAsync(inputValue, fromUnit, toUnit, result ->
+                        handler.post(() -> resultField.setText(String.valueOf(result)))
+                );
             }
         });
 
