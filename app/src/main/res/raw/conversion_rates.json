@@ -1,0 +1,123 @@
+{
+  "weight": {
+    "kilogram_to_gram": 1000,
+    "kilogram_to_ton": 0.001,
+    "kilogram_to_pound": 2.20462,
+    "kilogram_to_pood": 0.061,
+
+    "gram_to_kilogram": 0.001,
+    "gram_to_carat": 5,
+    "gram_to_ton": 0.000001,
+    "gram_to_pound": 0.00220462,
+    "gram_to_pood": 0.000061,
+
+    "ton_to_kilogram": 1000,
+    "ton_to_gram": 1000000,
+    "ton_to_pound": 2204.62,
+    "ton_to_pood": 16.38,
+    "ton_to_carat": 5000000,
+
+    "carat_to_gram": 0.2,
+    "carat_to_kilogram": 0.0002,
+    "carat_to_pound": 0.0004409,
+    "carat_to_pood": 0.0000123,
+    "carat_to_ton": 0.0000002,
+
+    "pound_to_kilogram": 0.453592,
+    "pound_to_gram": 453.592,
+    "pound_to_pood": 0.0714286,
+    "pound_to_carat": 2267.96,
+    "pound_to_ton": 0.000453592,
+
+    "pood_to_kilogram": 16.38,
+    "pood_to_gram": 16380,
+    "pood_to_pound": 36.1117,
+    "pood_to_carat": 81900,
+    "pood_to_ton": 0.01638
+  },
+  "length": {
+    "centimeter_to_meter": 0.01,
+    "centimeter_to_kilometer": 0.00001,
+    "centimeter_to_foot": 0.0328084,
+    "centimeter_to_yard": 0.0109361,
+    "centimeter_to_mile": 0.0000062137,
+    "centimeter_to_inch": 0.393701,
+
+    "meter_to_centimeter": 100,
+    "meter_to_kilometer": 0.001,
+    "meter_to_foot": 3.28084,
+    "meter_to_inch": 39.3701,
+    "meter_to_yard": 1.09361,
+    "meter_to_mile": 0.000621371,
+
+    "kilometer_to_meter": 1000,
+    "kilometer_to_centimeter": 100000,
+    "kilometer_to_mile": 0.621371,
+    "kilometer_to_yard": 1093.61,
+    "kilometer_to_foot": 3280.84,
+    "kilometer_to_inch": 39370.1,
+
+    "inch_to_meter": 0.0254,
+    "inch_to_centimeter": 2.54,
+    "inch_to_kilometer": 0.0000254,
+    "inch_to_yard": 0.0277778,
+    "inch_to_foot": 0.0833333,
+    "inch_to_inch": 1,
+
+    "mile_to_kilometer": 1.60934,
+    "mile_to_centimeter": 160934,
+    "mile_to_meter": 1609.34,
+    "mile_to_yard": 1760,
+    "mile_to_foot": 5280,
+    "mile_to_inch": 63360,
+
+    "yard_to_meter": 0.9144,
+    "yard_to_centimeter": 91.44,
+    "yard_to_kilometer": 0.0009144,
+    "yard_to_mile": 0.000568182,
+    "yard_to_foot": 3,
+    "yard_to_inch": 36,
+
+    "foot_to_centimeter": 30.48,
+    "foot_to_kilometer": 0.0003048,
+    "foot_to_yard": 0.333333,
+    "foot_to_meter": 0.3048,
+    "foot_to_inch": 12,
+    "foot_to_mile": 0.000189394
+
+  },
+  "temperature": {
+    "celsius_to_fahrenheit": {
+      "multiplier": 1.8,
+      "addition": 32
+    },
+    "fahrenheit_to_celsius": {
+      "multiplier": 0.5556,
+      "subtraction": 32
+    },
+    "celsius_to_kelvin": {
+      "addition": 273.15
+    },
+    "kelvin_to_celsius": {
+      "subtraction": 273.15
+    },
+    "fahrenheit_to_kelvin": {
+      "intermediate_to_celsius": {
+        "multiplier": 0.5556,
+        "subtraction": 32
+      },
+      "celsius_to_kelvin": {
+        "addition": 273.15
+      }
+    },
+    "kelvin_to_fahrenheit": {
+      "intermediate_to_celsius": {
+        "subtraction": 273.15
+      },
+      "celsius_to_fahrenheit": {
+        "multiplier": 1.8,
+        "addition": 32
+      }
+    }
+  }
+}

@@ -1,29 +1,38 @@
 package ua.cn.stu.getvariant.converter;
 
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import ua.cn.stu.getvariant.converter.model.LengthConverterActivity;
-import ua.cn.stu.getvariant.converter.model.TempConverterActivity;
-import ua.cn.stu.getvariant.converter.model.WeightConverterActivity;
+import ua.cn.stu.getvariant.converter.model.LengthConverter;
+import ua.cn.stu.getvariant.converter.model.TempConverter;
+import ua.cn.stu.getvariant.converter.model.WeightConverter;
+
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
-        // Обробка натискання кнопок для переходу до конвертерів
         Button btnLengthConverter = findViewById(R.id.btnLengthConverter);
         Button btnWeightConverter = findViewById(R.id.btnWeightConverter);
         Button btnTempConverter = findViewById(R.id.btnTempConverter);
 
-        btnLengthConverter.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, LengthConverterActivity.class)));
-        btnWeightConverter.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, WeightConverterActivity.class)));
-        btnTempConverter.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, TempConverterActivity.class)));
+        btnLengthConverter.setOnClickListener(v -> replaceFragment(new LengthConverter()));
+        btnWeightConverter.setOnClickListener(v -> replaceFragment(new WeightConverter()));
+        btnTempConverter.setOnClickListener(v -> replaceFragment(new TempConverter()));
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }
+
+
+
+

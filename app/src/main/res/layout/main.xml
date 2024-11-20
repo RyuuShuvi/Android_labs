@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background_color"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/authorInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Автор: студент групи ПІ-212 Сивко Денис"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/textview_background"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnLengthConverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Конвертер довжин"
+        android:layout_below="@id/authorInfo"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text_color"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnWeightConverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Конвертер ваги"
+        android:layout_below="@id/btnLengthConverter"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text_color"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnTempConverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Конвертер температур"
+        android:layout_below="@id/btnWeightConverter"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text_color"
+        android:layout_marginTop="16dp" />
+
+    <!-- Контейнер для фрагментів -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnTempConverter"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background_color"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/fromUnitSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/spinner_background"
+        android:padding="10dp"
+        android:layout_marginTop="16dp" />
+
+    <Spinner
+        android:id="@+id/toUnitSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fromUnitSpinner"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/spinner_background"
+        android:padding="10dp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/inputField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/toUnitSpinner"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edittext_background"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputField"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/textview_background"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text_color"
+        android:text="Конвертувати" />
+</RelativeLayout>

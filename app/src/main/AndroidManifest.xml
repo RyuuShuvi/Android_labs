@@ -23,9 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".model.LengthConverterActivity" />
-        <activity android:name=".model.WeightConverterActivity" />
-        <activity android:name=".model.TempConverterActivity" />
+        <service android:name=".lab2.ConversionService" />
     </application>
 
 </manifest>
